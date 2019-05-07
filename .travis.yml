@@ -1,7 +1,9 @@
 sudo: required
 services:
   - docker
-  
+env:
+  NO_GCE_CHECK = true
+    
 before_install:
   - docker build -t spring-basic-1 -f Dockerfile.dev .
 

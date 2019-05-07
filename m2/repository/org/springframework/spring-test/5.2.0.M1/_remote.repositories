@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Apr 27 20:12:26 IST 2019
+spring-test-5.2.0.M1.jar>spring-milestones=
+spring-test-5.2.0.M1-sources.jar>spring-milestones=
+spring-test-5.2.0.M1.pom>spring-milestones=
