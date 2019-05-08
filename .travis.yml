@@ -3,7 +3,12 @@ services:
   - docker
 env:
   NO_GCE_CHECK = true
-    
+language: java
+
+#jdk:
+#  - openjdk7
+#  - oraclejdk8
+      
 before_install:
   - docker build -t spring-basic-1 -f Dockerfile.dev .
 
