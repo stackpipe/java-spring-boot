@@ -3,8 +3,8 @@ services:
   - docker
 env:
   NO_GCE_CHECK = true
-language: java
 
+language: java
 #jdk:
 #  - openjdk7
 #  - oraclejdk8
