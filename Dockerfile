@@ -1,11 +1,10 @@
-FROM java:8
-WORKDIR '/app'
+FROM maven:3.6.1-jdk-8-alpine AS MAVEN_TOOL_CHAIN
+WORKDIR '/java-spring-basic-1'
 
-COPY target/microservice.basic-0.0.1-SNAPSHOT.jar java-spring-basic-1.jar
+ADD src	./src
+ADD pom.xml .
+RUN mvn package
 
-RUN bash -c 'touch java-spring-basic-1.jar'
-
-EXPOSE 80
-
+RUN bash -c 'touch target/microservice.basic-0.0.1-SNAPSHOT.jar'
 ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar java-spring-basic-1.jar"]
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar target/microservice.basic-0.0.1-SNAPSHOT.jar"]
