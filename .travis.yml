@@ -14,3 +14,17 @@ before_install:
 
 script:
   - mvn test -B
+  
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-southeast-1"
+  app: "spring-basic-1"
+  env: "SpringBasic1-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-428497997168"
+  bucket_path: "spring-basic-1"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+  
