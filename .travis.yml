@@ -8,4 +8,4 @@ before_install:
   - docker build -t spring-basic-1 -f Dockerfile.dev .
 
 script:
-  - docker run spring-basic-1 mvn test
+  - docker run spring-basic-1 mvn test -B
